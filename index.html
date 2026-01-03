@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="keywords" content="HIE, lesion detection, machine learning">
+
+  <link rel="shortcut icon" href="static/img/site/i3_lab_logo.png">
+
+  <title>HIE Lesion Detection</title>
+  <meta name="description" content="HIE Detection">
+
+  <!--Open Graph Related Stuff-->
+  <meta property="og:title" content="BONBID-HIE2023 Lesion Segmentation Workshop"/>
+  <meta property="og:url" content="https://hiechallenge.github.io?v=2"/>
+  <meta property="og:description" content="BONBID-HIE2023 Lesion Segmentation Workshop"/>
+  <meta property="og:site_name" content="BONBID-HIE2023 Lesion Segmentation Workshop"/>
+  <!--meta property="og:image" content="https://hiechallenge.github.io/static/img/site/teaser.jpg?v=2"/-->
+
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+  <link rel="stylesheet" href="static/css/main.css" media="screen,projection">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+</head>
+
+  <body>
+
+    <!-- <div class="top-strip"></div> -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"></a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#speakers">Invited Speakers</a></li>
+        <li><a href="#organizers">Organizers</a></li>
+        <li><a href="#seniororganizers">Senior Organizers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+    <div class="container">
+      <div class="page-content">
+          <p><br /></p>
+<div class="row">
+  <div class="col-xs-12">
+    <center><h1>BONBID-HIE2023: 1st Workshop on HIE Lesion Segmentation</h1></center>
+    <center><img src="static/logos/miccai2023-logo.png" alt="Logo 1" height="70px"></center>
+  </div>
+</div>
+
+<hr />
+
+
+<center>
+<div class="row" id="tasks">
+  <div class="col-md-4">
+    <img src="static/logos/fnndsc.jpg" alt="Logo 2" height="80px">
+  </div>
+  <div class="col-md-4">
+    <img src="static/logos/logo-bch.png" alt="Logo 3" height="80px">
+  </div>
+  <div class="col-md-4">
+    <img src="static/logos/hms.png" alt="Logo 4" >
+  </div>
+</div>
+</center>
+
+<!--div class="row" id="intro">
+    <div>  
+    <img src="static/img/site/teaser.jpg" style="width: 100%; height: auto;"/>
+  </div>
+</div-->
+
+
+<!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> 
+  <img src="static/img/site/a.png">
+</div>
+
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> 
+  <img src="static/img/site/b.png">
+</div>
+ -->
+
+
+
+
+
+
+<p><br /></p>
+<div class="row" id="cfp">
+  <div class="col-xs-12">
+    <h2>Introduction</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p>
+      Hypoxic ischemic encephalopathy (HIE) is a brain injury that occurs in 1 ∼ 5/1000 term-born neonates. HIE lesion detection is a crucial step in the clinical care of HIE. It could lead to a more accurate estimation of prognosis, a better understanding of neurological symptoms, and a timely prediction of response to therapy in this population. The rise of Artificial Intelligence (AI) brings hope to objectively and accurately finding HIE lesions. In order to bring together researchers interested in HIE lesion detection and facilitate research in this area, we release the first HIE dataset: BOston Neonatal Brain Injury Dataset for Hypoxic Ischemic Encephalopathy (BONBID-HIE), and host the first benchmark challenge on HIE Lesion Segmentation. The workshop consists of presentations by clinical and machine learning experts in the field and short talks regarding methods addressing the benchmark challenges in this disease.
+    </p>
+  </div>
+</div>
+
+<p><br /></p>
+<div class="row" id="cfp">
+  <div class="col-xs-12">
+    <h2>BONBID-HIE Lesion Segmentation Challenge</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p>
+      We establish one challenge this year:
+    </p>
+    <ul>      
+
+      <li>
+        <strong>BONBID-HIE Lesion Segmentation</strong>: to predict a binary mask of HIE lesion.
+      </li>      
+    </ul>
+
+    <div class="row" id="tasks">
+
+      <div class="col-md-18">
+        <img src="static/img/site/hie.png" height="300px"/>
+        <p>HIE Lesion Detection</p>
+      </div>
+      <!-- <div class="col-md-4">
+        <p>&nbsp;</p>
+      </div> -->
+      <!-- <div class="col-md-4">
+        <img src="/cvpr2021workshop/static/img/scene_type_classification.jpg">
+        <p>Scene type classification</p>
+      </div> -->
+    </div>
+
+    <p>
+      Participants of the challenge are provided with prepared training, test datasets, and automated evaluation scripts. The top teams of the challenge will be invited to give a short talk describing their method during this workshop.
+
+    </p>
+
+    <p>
+      The challenge is hosted on Grand Challenge. If you would like to join the challenge, see more details here:
+    </p>
+    <ul>      
+      <li>
+        <strong><b><a href="https://bonbid-hie2023.grand-challenge.org">1st BONBID-HIE Lesion Segmentation Challenge</a></b></strong>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<p><br /></p>
+<div class="row" id="dates">
+  <div class="col-xs-12">
+    <h2>Important Dates</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>Training Data Release and Registration Open</td>
+          <td>7/1/2023</td>
+        </tr>
+        <tr>
+          <td>Development Stage</td>
+          <td>7/1/2023-8/31/2023</td>
+        </tr>
+        <tr>
+          <td>Eval Stage</td>
+          <td>8/15/2023-9/20/2023</td>
+        </tr>
+        <tr>
+          <td>Test Stage</td>
+          <td>9/1/2023-9/20/2023</td>
+        </tr>
+        <tr>
+          <td>Method Description and Codes Submission</td>
+          <td>9/15/2023-9/20/2023</td>
+        </tr>
+        <tr>
+          <td>Notifications of Challenge Winners</td>
+          <td>10/1/2023</td>
+        </tr>
+        <tr>
+          <td>BONBID-HIE 2023 Workshop Date</td>
+          <td>10/16/2023 10:00 AM - 1:00 PM (EST)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p><br /></p>
+<div class="row" id="BONBID-HIE 2023 Workshop Schedule">
+  <div class="col-xs-12">
+    <h2>BONBID-HIE 2023 Workshop</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+     <table class="table table-striped">
+      <tbody>
+        <!-- <tr><td>TBD</td><td>TBD</td></tr> -->
+        <tr>
+          <td>10/16/2023 10:00 AM - 1:00 PM (EST) <strong><b><a href="https://bostonchildrens.zoom.us/j/4761271354?pwd=K1hTN3ZyYWxGcjhZUUtMMHpySEJCQT09#success">Zoom Link</a></b></strong></td>
+        </tr>
+        <tr>
+          <td>Website and Arrangements <strong><b><a href="https://bonbid-hie2023.grand-challenge.org/workshop/">1st BONBID-HIE Lesion Segmentation Workshop</a></b></strong></td>
+          <!-- <td>12:00 - 12:10</td> -->
+        </tr>
+        <!-- <tr>
+          <td><i>HIE Lesion Detection and Outcome Prediction</i></td>
+          <td>12:10 - 12:40</td>
+        </tr>
+
+        <tr>
+          <td>Winner Talk for HIE</td>
+          <td>14:50 - 15:00</td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p><br /></p>
+
+<hr />
+
+
+<div class="row" id="contact">
+  <div class="col-xs-12">
+    <h2>Workshop Video</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p>
+      <b>The 3-hour-long workshop will be recorded and uploaded to youtube and this workshop website.</b>
+    </p>
+  </div>
+</div>
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+<div class="row" id="speakers">
+  <div class="col-xs-12">
+    <h2>Invited Speakers</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+     <table class="table table-striped">
+      <tbody>
+        <!-- <tr><td>TBD</td><td>TBD</td></tr> -->
+        <tr>
+          <div class="row">
+            <div class="col-xs-2">
+              <img class="people-pic" src="static/img/people/seetha_new.webp" />
+            <div class="people-name">
+            <a href="http://">Seetha Shankaran, M.D</a>
+            </div>
+            </div>
+
+          </div>
+          <td>Seetha Shankaran, M.D. neonatologist at the Children’s Hospital of Michigan was the principal investigator of the 1st randomized controlled trial of whole body cooling for neonatal hypoxic ischemic encephalopathy (HIE). Considered a pioneer in finding effective methods for protecting HIE-affected newborns, she led a landmark 2005 study in the New England Journal of Medicine to help make the 72-hour “cooling blanket” procedure the standard of care in treating this condition. Several of her subsequent papers in the New England Journal of Medicine and JAMA have further tested the optimization of cooling therapy in newborns and long term outcomes of cooled infants. She was also the first author in the publications which have validated a scoring system for MRI as a prognostic marker for neonatal encephalopathy.</td>
+          <!-- <td>12:00 - 12:10</td> -->
+        </tr>
+        <!-- <tr>
+          <td><i>HIE Lesion Detection and Outcome Prediction</i></td>
+          <td>12:10 - 12:40</td>
+        </tr>
+
+        <tr>
+          <td>Winner Talk for HIE</td>
+          <td>14:50 - 15:00</td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+<div class="row" id="organizers">
+  <div class="col-xs-12">
+    <h2>Organizers</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-2">
+    <a href="https://scholar.harvard.edu/rinabao/home">
+      <img class="people-pic" src="static/img/people/rina_bao_photo.jpeg" />
+    </a>
+    <div class="people-name">
+      <a href="http://">Rina Bao, PhD</a>
+      <h6>Postdoctoral Research Fellow, Boston Children's Hospital, Harvard Medical School</h6>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row" id="seniororganizers">
+  <div class="col-xs-12">
+    <h2>Senior Organizers</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-2">
+    <a href="https://scholar.harvard.edu/yangming.ou">
+      <img class="people-pic" src="static/img/people/yangmingou_pic.png" />
+    </a>
+    <div class="people-name">
+      <a href="https://scholar.harvard.edu/yangming.ou">Yangming Ou, PhD</a>
+      <h6>Associate Professor of Radiology, Harvard Medical School</h6>
+    </div>
+  </div>
+
+  <div class="col-xs-2">
+    <a href="https://www.childrenshospital.org/directory/patricia-ellen-grant">
+      <img class="people-pic" src="static/img/people/ellen.webp" />
+    </a>
+    <div class="people-name">
+      <a href="https://scholar.harvard.edu/yangming.ou">P. Ellen Grant, MD</a>
+      <h6>Director of Fetal-Neonatal Neuroimaging and Developmental Science Center, Professor of Radiology and Pediatrics, Harvard Medical School</h6>
+    </div>
+  </div>
+
+  <!-- <div class="col-xs-2">
+    <a href="https://www.childrenshospital.org/directory/patricia-ellen-grant">
+      <img class="people-pic" src="" />
+    </a>
+    <div class="people-name">
+      <a href="https://scholar.harvard.edu/yangming.ou"></a>
+      <h6>Boston Children's Hospital, Harvard Medical School</h6>
+    </div>
+  </div> -->
+
+
+</div>
+
+
+
+
+
+<p><br /></p>
+
+<hr />
+
+
+<div class="row" id="contact">
+  <div class="col-xs-12">
+    <h2>Contact</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p>
+      <b>rina.bao@childrens.harvard.edu</b>
+    </p>
+  </div>
+</div>
+<p><br /></p>
+
+<hr />
+
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Acknowledgments</h2>
+  </div>
+</div>
+<p><a name="/acknowledgements"></a></p>
+<div class="row">
+  <div class="col-xs-12">
+    <p>
+      Thanks to <span style="color:#1a1aff;font-weight:400;"> <a href="https://visualdialog.org/">visualdialog.org</a></span> for the webpage format.
+    </p>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
